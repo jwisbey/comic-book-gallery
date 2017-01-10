@@ -11,8 +11,7 @@ namespace ComicBookGallery.Controllers
     {
         public ActionResult Detail()
         {
-
-            var comicBook = new ComicBook()
+            var comicBook = new ComicBook()   //Create Model Instance
             {
                 SeriesTitle = "The Amazing Spider Man",
                 IssueNumber = 700,
@@ -25,9 +24,7 @@ namespace ComicBookGallery.Controllers
                     new Artist() { Name = "Edgar Delgado", Role = "Colors" },
                     new Artist() { Name = "Chris Eliopoulos", Role = "Letters" },
                 }
-            };
-
-            
+            };            
             return View(comicBook);  
         }
 
