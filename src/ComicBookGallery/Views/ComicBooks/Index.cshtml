@@ -1,17 +1,18 @@
-﻿
+﻿@model ComicBookGallery.Models.ComicBook[]
 @{
-    Layout = null;
+    ViewBag.Title = "Comic Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>@ViewBag.Title</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
-    </div>
-</body>
-</html>
+<div class="row">
+     @foreach (var comicBook in Model)
+     {
+        <div class="col-md-3">
+               <h4>@comicBook.DisplayText</h4>
+                <img src="/Images/@comicBook.CoverImageFileName" alt="@comicBook.DisplayText" class="img-responsive" />
+         </div>
+     }
+    
+</div>
